@@ -7,7 +7,7 @@
     width : 30%;
     height : 100%; 
     /* height : 50px; */
-    background-color : black;
+    background-color: #1b1a20;
     color : white;
     top : 0;
     right:0;
@@ -18,7 +18,7 @@
 
 .cart {
     font-size: 30px;
-    position: fixed;
+    /* position: fixed; */
     background-color: black;
     color: white;
     height: 40px;
@@ -33,13 +33,21 @@
   }
   .cartItem {
       /* grid-template-columns: 1fr 1fr 1fr; */
-      display: flex;
-      justify-content: space-between;
+
+      /* display: flex;
+      flex-grow: 1; */
+      /* justify-content: space-between; */
       /* align-content: space-between; */
-      padding: 5%;
+      /* display: block; */
+      display: grid;
+      grid-template-columns: 5em 18em 5em;
+      gap: 5px; 
+      padding: 2%;
       border-top: 1px solid white;
       border-bottom: 1px solid white;
-      height: 5%;
+      /* height: 5%; */
+      position: relative;
+      align-items: center;
   }
   .cartCount {
       width: 5%;
@@ -61,22 +69,58 @@
     border: 1px solid white;
     height: 80px;
     width: 60px;
+    /* object-fit: cover; */
 
 }
+.title {
+    color: #ececec;
+    font-family: Roboto,sans-serif;
 
+}
+.sizes {
+    color: #5b5a5e;
+}
+.price {
+    color: #eabf00;
+}
+.btndelete {
+    width: 30px;
+    height: 30px;
+    color: #4b4a4e;
+    background-repeat:no-repeat;
+    background-color: transparent;
+    border: none;
+    
+}
+
+  .cartFooter {
+      position: fixed;
+  }
+  .qButton {
+    color: #b7b7b7;
+    border: 0;
+    background-color: #000;
+    width: 25px;
+    height: 25px;
+
+  }
+
+  /* The side navigation menu */
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
+    height: 100%; /* 100% Full-height */
+    width: 30%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
     right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    /* visibility: hidden; */
   }
   
+  /* The navigation menu links */
   .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -86,8 +130,12 @@
     transition: 0.3s;
   }
   
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
   
-  
+  /* Position and style the close button (top right corner) */
   .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -96,6 +144,13 @@
     margin-left: 50px;
   }
   
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}

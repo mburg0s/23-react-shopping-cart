@@ -7,7 +7,7 @@ import {
 import styles from "./Product.module.css";
 // import { FaShoppingCart } from "react-icons/fa";
 // import {showCart} from '../cart/cartSlice'
-// import {Cart} from "../cart/Cart"
+import {Cart} from "../cart/Cart"
 import { addToCart} from "../cart/cartSlice"
 
 
@@ -33,7 +33,7 @@ export function Product() {
   // }
   return (
     <div className={styles.mainContainer}>
-          {/* <Cart />   */}
+          <Cart />  
 
       <nav></nav>
       <div className={styles.mainTable}>
@@ -50,15 +50,14 @@ export function Product() {
 
                 <img src={p.img.normal} alt="{p.title}" />
                 <p>{p.title}</p>
-                <div className={styles.dash}></div>
                 <div className={styles.productPrice}>
                   <div>
                     <small>{p.currencyFormat}</small>
                     <b>{p.price.toFixed(2)}</b>
 
-                    <p className={styles.installment}>
+                    <p>
                       or {p.installments} x
-                      {p.currencyFormat}{installment(p.price, p.installments)}
+                      {installment(p.price, p.installments)}
                     </p>
                   </div>
                   <div className={styles.addToCart}>Add to Cart</div>
